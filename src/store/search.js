@@ -22,7 +22,6 @@ export default {
         method: "POST",
         body: JSON.stringify(payload),
       }).then((res) => res.json());
-      console.log(searchResult);
       commit("assignState", {
         searchResult: searchResult,
       });
