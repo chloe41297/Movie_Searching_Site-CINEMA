@@ -5,14 +5,14 @@ const axios = require("axios");
 
 exports.handler = async function (e) {
   const options = JSON.parse(e.body);
-  const { id = "", method, body } = options;
+  const { id, method, body } = options;
   const res = await axios({
-    url: `https://www.omdbapi.com?apikey=${KEY}%&i=${id}`,
+    url: `https://www.omdbapi.com?apikey=${KEY}&i=${id}`,
     method,
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
-    data: body,
+    data: "",
   });
   return {
     statusCode: 200,
